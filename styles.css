@@ -9,7 +9,7 @@ body {
 }
 
 header {
-    background: linear-gradient(135deg, #006400, #004d00);
+    background: linear-gradient(135deg, #0d240d, #041f04);
     color: white;
     padding: 20px 0;
     text-align: center;
@@ -40,7 +40,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #a1c4a1; /* verde chiaro per hover */
+    color: #1e401e; /* verde chiaro per hover */
 }
 
 section {
@@ -93,7 +93,7 @@ section p {
 
 .product h3 {
     font-size: 1.5em;
-    color: #27ae60;
+    color: #0f3a21;
 }
 
 .product p {
@@ -151,4 +151,60 @@ footer p {
         flex-direction: column;
         align-items: center;
     }
+}
+/* Stile del blog */
+#blog {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.post {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.post img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.full-content {
+    display: none;
+}
+
+.read-more {
+    background: #0066cc;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.read-more:hover {
+    background: #004c99;
+}
+.full-content {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    background: #1b1b1b;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+.social-icon {
+    width: 50px;  /* Dimensione dell'icona */
+    height: 50px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);  /* Effetto zoom al passaggio del mouse */
 }

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Negozio</title>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="interazioni.js"></script>
+
 </head>
 <body>
     <header>
@@ -16,6 +18,7 @@
                 <li><a href="products.html">Negozio</a></li>
                 <li><a href="team.html">Il Nostro Team</a></li>
                 <li><a href="contact.html">Contatti</a></li>
+                <li><a href="blog.html">Blog</a></li>
             </ul>
         </nav>
     </header>
@@ -25,16 +28,16 @@
         <div class="product-grid">
             <div class="product" id="product1">
                 <div class="product-image">
-                    <img src="product1.jpg" alt="Prodotto 1">
+                    <img src="./immagini prod/macbook.png" alt="macbook m1">
                 </div>
                 <div class="product-info">
-                    <h3>Prodotto 1</h3>
+                    <h3>macbook pro m1</h3>
                     <button class="product-btn" onclick="showProductDetails('product1', 'Prodotto 1', 'Un articolo fantastico che ti sorprenderà!')">Scopri di più</button>
                 </div>
             </div>
             <div class="product" id="product2">
                 <div class="product-image">
-                    <img src="product2.jpg" alt="Prodotto 2">
+                    <img src="./immagini prod/ladybugs-prod.jpeg" alt="Prodotto 2">
                 </div>
                 <div class="product-info">
                     <h3>Prodotto 2</h3>
@@ -61,38 +64,7 @@
             </div>
         </div>
     </section>
-    <div id="product-overlay" class="overlay">
-        <div class="overlay-content">
-            <h2 id="overlay-title"></h2>
-            <p id="overlay-description"></p>
-            <button onclick="closeOverlay()">Chiudi</button>
-        </div>
-    </div>
-
-    <!-- Script JavaScript -->
-    <script>
-        // Funzione per mostrare la descrizione del prodotto
-        function showProductDetails(productId, productName, productDescription) {
-            const allProducts = document.querySelectorAll('.product');
-            allProducts.forEach(product => {
-                product.classList.remove('active');
-            });
-
-            const selectedProduct = document.getElementById(productId);
-            selectedProduct.classList.add('active');
-
-            const overlayTitle = document.getElementById("overlay-title");
-            const overlayDescription = document.getElementById("overlay-description");
-            overlayTitle.innerText = productName;
-            overlayDescription.innerText = productDescription;
-            document.getElementById("product-overlay").style.display = "flex";
-        }
-
-        // Funzione per chiudere l'overlay
-        function closeOverlay() {
-            document.getElementById("product-overlay").style.display = "none";
-        }
-    </script>
+    
     <footer>
         <p>&copy; 2025 Nostro Store. Tutti i diritti riservati.</p>
     </footer>
