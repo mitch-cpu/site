@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Negozio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Negozio</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">Chi Siamo</a></li>
+                <li><a href="products.html">Negozio</a></li>
+                <li><a href="team.html">Il Nostro Team</a></li>
+                <li><a href="contact.html">Contatti</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="products">
+        <h2>Scopri i Nostri Prodotti!</h2>
+        <div class="product-grid">
+            <div class="product" id="product1">
+                <div class="product-image">
+                    <img src="product1.jpg" alt="Prodotto 1">
+                </div>
+                <div class="product-info">
+                    <h3>Prodotto 1</h3>
+                    <button class="product-btn" onclick="showProductDetails('product1', 'Prodotto 1', 'Un articolo fantastico che ti sorprenderà!')">Scopri di più</button>
+                </div>
+            </div>
+            <div class="product" id="product2">
+                <div class="product-image">
+                    <img src="product2.jpg" alt="Prodotto 2">
+                </div>
+                <div class="product-info">
+                    <h3>Prodotto 2</h3>
+                    <button class="product-btn" onclick="showProductDetails('product2', 'Prodotto 2', 'Qualità e design innovativo per te.')">Scopri di più</button>
+                </div>
+            </div>
+            <div class="product" id="product3">
+                <div class="product-image">
+                    <img src="product3.jpg" alt="Prodotto 3">
+                </div>
+                <div class="product-info">
+                    <h3>Prodotto 3</h3>
+                    <button class="product-btn" onclick="showProductDetails('product3', 'Prodotto 3', 'Perfetto per ogni occasione, non lasciartelo scappare!')">Scopri di più</button>
+                </div>
+            </div>
+            <div class="product" id="product4">
+                <div class="product-image">
+                    <img src="product4.jpg" alt="Prodotto 4">
+                </div>
+                <div class="product-info">
+                    <h3>Prodotto 4</h3>
+                    <button class="product-btn" onclick="showProductDetails('product4', 'Prodotto 4', 'Il prodotto di cui hai bisogno per migliorare la tua giornata!')">Scopri di più</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="product-overlay" class="overlay">
+        <div class="overlay-content">
+            <h2 id="overlay-title"></h2>
+            <p id="overlay-description"></p>
+            <button onclick="closeOverlay()">Chiudi</button>
+        </div>
+    </div>
+
+    <!-- Script JavaScript -->
+    <script>
+        // Funzione per mostrare la descrizione del prodotto
+        function showProductDetails(productId, productName, productDescription) {
+            const allProducts = document.querySelectorAll('.product');
+            allProducts.forEach(product => {
+                product.classList.remove('active');
+            });
+
+            const selectedProduct = document.getElementById(productId);
+            selectedProduct.classList.add('active');
+
+            const overlayTitle = document.getElementById("overlay-title");
+            const overlayDescription = document.getElementById("overlay-description");
+            overlayTitle.innerText = productName;
+            overlayDescription.innerText = productDescription;
+            document.getElementById("product-overlay").style.display = "flex";
+        }
+
+        // Funzione per chiudere l'overlay
+        function closeOverlay() {
+            document.getElementById("product-overlay").style.display = "none";
+        }
+    </script>
+    <footer>
+        <p>&copy; 2025 Nostro Store. Tutti i diritti riservati.</p>
+    </footer>
+</body>
+</html>
